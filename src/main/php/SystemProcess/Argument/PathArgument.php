@@ -40,7 +40,7 @@ class PathArgument extends EscapedArgument
      */
     public function getPrepared()
     {
-        if ( strtoupper( substr( PHP_OS, 0, 3 ) ) === 'WIN' )
+        if ( strtoupper( substr( PHP_OS, 0, 3 ) ) === 'WIN' and strpos($this->value, "://") === False)
         {
             $this->value = str_replace( '/', '\\', $this->value );
         }
